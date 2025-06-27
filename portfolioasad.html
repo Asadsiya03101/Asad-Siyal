@@ -1,0 +1,1305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asad Siyal | Professional Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    /* Global Styles */
+:root {
+    --primary-color: #6247fd;
+    --secondary-color: #0f172a;
+    --text-color: #777777;
+    --bg-color: #f9f9ff;
+    --white-color: #ffffff;
+    --dark-color: #1e293b;
+    --border-color: #e8dfec;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--white-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+::selection {
+    color: var(--white-color);
+    background: var(--primary-color);
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+.btn {
+    display: inline-block;
+    background: var(--primary-color);
+    color: var(--white-color);
+    font-size: 16px;
+    font-weight: 500;
+    padding: 12px 30px;
+    margin-top: 20px;
+    border-radius: 6px;
+    border: 2px solid var(--primary-color);
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.btn:hover {
+    color: var(--primary-color);
+    background: none;
+}
+
+.title {
+    font-size: 40px;
+    font-weight: 700;
+    color: var(--secondary-color);
+    text-align: center;
+    margin-bottom: 60px;
+    position: relative;
+}
+
+.title::before {
+    content: "";
+    position: absolute;
+    width: 80px;
+    height: 3px;
+    background: var(--primary-color);
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Header Styles */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 0;
+    z-index: 1000;
+    transition: all 0.3s ease;
+    background-color: hsla(0, 3%, 62%, 0.555);
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    
+}
+
+.header.sticky {
+    background: var(--white-color);
+    padding: 15px 0;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+    
+}
+
+.logo a {
+    font-size: 30px;
+    font-weight: 600;
+    color: var(--secondary-color);
+    text-decoration: none;
+}
+
+.logo a span {
+    color: var(--primary-color);
+    transition: all 0.3s ease;
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+}
+
+.navbar ul li {
+    margin-left: 30px;
+}
+
+.navbar ul li a {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--secondary-color);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    padding: 5px 0;
+    position: relative;
+}
+
+.navbar ul li a::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary-color);
+    transition: width 0.3s ease;
+}
+
+.navbar ul li a:hover::before {
+    width: 100%;
+}
+
+.navbar ul li a:hover {
+    color: var(--primary-color);
+}
+
+.menu-btn {
+    color: var(--secondary-color);
+    font-size: 23px;
+    cursor: pointer;
+    display: none;
+}
+
+/* Home Section Styles */
+.home {
+    height: 100vh;
+    background: var(--bg-color);
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.home .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.home-content {
+    max-width: 600px;
+}
+
+.home-content .text-1 {
+    font-size: 27px;
+    color: var(--secondary-color);
+}
+
+.home-content .text-2 {
+    font-size: 75px;
+    font-weight: 600;
+    color: var(--secondary-color);
+    margin: -3px 0;
+}
+
+.home-content .text-3 {
+    font-size: 40px;
+    margin: 5px 0;
+}
+
+.home-content .text-3 span {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.home-image {
+    position: relative;
+    width: 400px;
+    height: 400px;
+}
+
+.home-image .img-box {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 10px solid var(--white-color);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    animation: morph 8s ease-in-out infinite;
+}
+
+@keyframes morph {
+    0%, 100% {
+        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    }
+    50% {
+        border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+    }
+}
+
+.home-image .img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.home-image .liquid-shape {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    background: var(--primary-color);
+    border-radius: 50%;
+    animation: morph 8s ease-in-out infinite;
+    z-index: 0;
+    opacity: 0.8;
+}
+
+/* About Section Styles */
+.about {
+    padding: 100px 0;
+}
+
+.about-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.about-content .column {
+    width: calc(50% - 30px);
+}
+
+.about-content .left img {
+    width: 100%;
+    border-radius: 6px;
+    object-fit: cover;
+}
+
+.about-content .right .text {
+    font-size: 25px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.about-content .right .text span {
+    color: var(--primary-color);
+}
+
+.about-content .right p {
+    text-align: justify;
+    margin-bottom: 20px;
+}
+
+.about-content .right .personal-info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.about-content .right .personal-info div {
+    width: calc(50% - 10px);
+    margin-bottom: 10px;
+}
+
+.about-content .right .personal-info div span {
+    font-weight: 600;
+    color: var(--secondary-color);
+    margin-right: 5px;
+}
+
+/* Skills Section Styles */
+.skills {
+    padding: 100px 0;
+    background: var(--bg-color);
+}
+
+.skills-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.skills-content .column {
+    width: calc(50% - 30px);
+}
+
+.skills-content .left .text {
+    font-size: 25px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.skills-content .left p {
+    text-align: justify;
+    margin-bottom: 20px;
+}
+
+.skills-content .right .bars {
+    margin-bottom: 15px;
+}
+
+.skills-content .right .info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+.skills-content .right span {
+    font-weight: 500;
+    color: var(--secondary-color);
+}
+
+.skills-content .right .line {
+    height: 5px;
+    width: 100%;
+    background: var(--border-color);
+    border-radius: 6px;
+    position: relative;
+}
+
+.skills-content .right .line::before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: var(--primary-color);
+    border-radius: 6px;
+}
+
+.skills-content .right .uiux::before {
+    width: 90%;
+    animation: uiux 2s;
+}
+
+.skills-content .right .html::before {
+    width: 95%;
+    animation: html 2s;
+}
+
+.skills-content .right .css::before {
+    width: 90%;
+    animation: css 2s;
+}
+
+.skills-content .right .tailwindcss::before {
+    width: 85%;
+    animation: tailwindcss 2s;
+}
+
+.skills-content .right .javascript::before {
+    width: 65%;
+    animation: javascript 2s;
+}
+
+@keyframes uiux {
+    0% {
+        width: 0%;
+    }
+    100% {
+        width: 90%;
+    }
+}
+
+@keyframes html {
+    0% {
+        width: 0%;
+    }
+    100% {
+        width: 95%;
+    }
+}
+
+@keyframes css {
+    0% {
+        width: 0%;
+    }
+    100% {
+        width: 90%;
+    }
+}
+
+@keyframes tailwindcss {
+    0% {
+        width: 0%;
+    }
+    100% {
+        width: 85%;
+    }
+}
+
+@keyframes javascript {
+    0% {
+        width: 0%;
+    }
+    100% {
+        width: 65%;
+    }
+}
+
+/* Projects Section Styles */
+.projects {
+    padding: 100px 0;
+}
+
+.projects-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.projects-content .card {
+    width: calc(33.33% - 20px);
+    background: var(--bg-color);
+    text-align: center;
+    border-radius: 6px;
+    padding: 30px 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 30px;
+}
+
+.projects-content .card:hover {
+    background: var(--primary-color);
+    transform: translateY(-15px);
+}
+
+.projects-content .card:hover i,
+.projects-content .card:hover .text,
+.projects-content .card:hover p,
+.projects-content .card:hover .btn {
+    color: var(--white-color);
+}
+
+.projects-content .card:hover .btn {
+    border-color: var(--white-color);
+}
+
+.projects-content .card i {
+    font-size: 50px;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+}
+
+.projects-content .card .text {
+    font-size: 25px;
+    font-weight: 600;
+    color: var(--secondary-color);
+    margin-bottom: 10px;
+    transition: all 0.3s ease;
+}
+
+.projects-content .card p {
+    color: var(--text-color);
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+}
+
+.projects-content .card .btn {
+    color: var(--primary-color);
+    background: none;
+    transition: all 0.3s ease;
+}
+
+/* Experience Section Styles */
+.experience {
+    padding: 100px 0;
+    background: var(--bg-color);
+}
+
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 100%;
+    background: var(--primary-color);
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.timeline-item {
+    padding: 20px 40px;
+    position: relative;
+    width: 50%;
+    margin-bottom: 30px;
+}
+
+.timeline-item:nth-child(odd) {
+    left: 0;
+}
+
+.timeline-item:nth-child(even) {
+    left: 50%;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--primary-color);
+    top: 30px;
+}
+
+.timeline-item:nth-child(odd)::before {
+    right: -10px;
+}
+
+.timeline-item:nth-child(even)::before {
+    left: -10px;
+}
+
+.timeline-item-inner {
+    padding: 30px;
+    background: var(--white-color);
+    border-radius: 6px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.timeline-item-inner .icon {
+    position: absolute;
+    top: 30px;
+    color: var(--primary-color);
+    font-size: 20px;
+}
+
+.timeline-item:nth-child(odd) .icon {
+    right: -50px;
+}
+
+.timeline-item:nth-child(even) .icon {
+    left: -50px;
+}
+
+.timeline-item-inner .date {
+    color: var(--primary-color);
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.timeline-item-inner h3 {
+    font-size: 20px;
+    color: var(--secondary-color);
+    margin-bottom: 5px;
+}
+
+.timeline-item-inner h4 {
+    font-size: 16px;
+    color: var(--text-color);
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+/* Contact Section Styles */
+.contact {
+    padding: 100px 0;
+}
+
+.contact-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.contact-content .column {
+    width: calc(50% - 30px);
+}
+
+.contact-content .left .text {
+    font-size: 25px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.contact-content .left p {
+    text-align: justify;
+    margin-bottom: 30px;
+}
+
+.contact-content .left .icons {
+    margin-bottom: 30px;
+}
+
+.contact-content .left .icons .row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.contact-content .left .icons .row i {
+    font-size: 20px;
+    color: var(--primary-color);
+    margin-right: 20px;
+}
+
+.contact-content .left .icons .row .info .head {
+    font-weight: 600;
+    color: var(--secondary-color);
+}
+
+.contact-content .left .icons .row .info .sub-title {
+    color: var(--text-color);
+}
+
+.contact-content .right form .fields {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.contact-content .right form .field {
+    width: calc(50% - 10px);
+    margin-bottom: 20px;
+}
+
+.contact-content .right form .textarea {
+    width: 100%;
+}
+
+.contact-content .right form .name input,
+.contact-content .right form .email input,
+.contact-content .right form .field input,
+.contact-content .right form .textarea textarea {
+    width: 100%;
+    height: 50px;
+    padding: 0 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    outline: none;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.contact-content .right form .textarea textarea {
+    height: 150px;
+    padding: 15px;
+    resize: none;
+}
+
+.contact-content .right form .field input:focus,
+.contact-content .right form .textarea textarea:focus {
+    border-color: var(--primary-color);
+}
+
+.contact-content .right form button {
+    width: 100%;
+    height: 50px;
+    background: var(--primary-color);
+    color: var(--white-color);
+    font-size: 18px;
+    font-weight: 500;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.contact-content .right form button:hover {
+    background: #d63a57;
+}
+
+/* Footer Styles */
+footer {
+    background: var(--secondary-color);
+    padding: 20px 0;
+    color: var(--white-color);
+    text-align: center;
+}
+
+footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+footer span a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+footer .social-links a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--white-color);
+    border-radius: 50%;
+    line-height: 40px;
+    margin-left: 10px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+footer .social-links a:hover {
+    background: var(--primary-color);
+    transform: translateY(-5px);
+}
+
+/* Scroll Up Button */
+.scroll-up-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: var(--primary-color);
+    color: var(--white-color);
+    border-radius: 50%;
+    text-align: center;
+    line-height: 50px;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 999;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.scroll-up-btn.active {
+    bottom: 30px;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.scroll-up-btn:hover {
+    background: #d63a57;
+    transform: translateY(-5px);
+}
+
+/* Responsive Styles */
+@media (max-width: 991px) {
+    .home-content .text-2 {
+        font-size: 60px;
+    }
+    
+    .home-content .text-3 {
+        font-size: 32px;
+    }
+    
+    .about-content .column,
+    .skills-content .column,
+    .contact-content .column {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    
+    .projects-content .card {
+        width: calc(50% - 15px);
+    }
+    
+    .timeline::before {
+        left: 30px;
+    }
+    
+    .timeline-item {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 0;
+    }
+    
+    .timeline-item:nth-child(even) {
+        left: 0;
+    }
+    
+    .timeline-item::before {
+        left: 20px;
+    }
+    
+    .timeline-item:nth-child(odd) .icon,
+    .timeline-item:nth-child(even) .icon {
+        left: -50px;
+    }
+}
+
+@media (max-width: 767px) {
+    .menu-btn {
+        display: block;
+    }
+    
+    .navbar {
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        top: 0;
+        left: -100%;
+        background: var(--white-color);
+        padding-top: 80px;
+        transition: all 0.3s ease;
+    }
+    
+    .navbar.active {
+        left: 0;
+    }
+    
+    .navbar ul {
+        display: block;
+        text-align: center;
+    }
+    
+    .navbar ul li {
+        margin: 20px 0;
+    }
+    
+    .home .container {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+    
+    .home-content {
+        margin-top: 50px;
+    }
+    
+    .home-image {
+        width: 300px;
+        height: 300px;
+    }
+    
+    .projects-content .card {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .home-content .text-2 {
+        font-size: 50px;
+    }
+    
+    .home-content .text-3 {
+        font-size: 28px;
+    }
+    
+    .title {
+        font-size: 30px;
+    }
+    
+    .about-content .right .personal-info div {
+        width: 100%;
+    }
+    
+    .contact-content .right form .field {
+        width: 100%;
+    }
+}
+</style>
+<body>
+    <!-- Header/Navigation -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="#">Asad<span> Siyal</span></a>
+            </div>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <!-- <li><a href="#projects">Projects</a></li> -->
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="home" id="home">
+        <div class="container">
+            <div class="home-content">
+                <div class="text-1">Hello, my name is</div>
+                <div class="text-2">Asad Siyal</div>
+                <div class="text-3">And I'm a <span class="typing"></span></div>
+                <a href="#contact" class="btn">Hire Me</a>
+            </div>
+            <div class="home-image">
+                <div class="img-box">
+                    <img src="c:\asad portfolio\1736147332491.jpg" alt="Profile Image">
+                </div>
+                <div class="liquid-shape"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <h2 class="title">About Me</h2>
+            <div class="about-content">
+                <div class="column left">
+                    <img src="c:\asad portfolio\480165600_2727670497422011_4355377814518285021_n.jpg" alt="About Image">
+                </div>
+                <div class="column right">
+                    <div class="text">I'm Asad Siyal<span class="typing-2"></span></div>
+                    <p>Hi, I'm Asad Siyal a passionate UI/UX Designer dedicated to creating intuitive, engaging, and visually compelling digital experiences. With a strong eye for detail and a user-centered design approach, I specialize in transforming complex ideas into simple and elegant interfaces that solve real-world problems.
+
+I combine creativity with functionality, focusing on usability, accessibility, and seamless interaction. Whether it's wireframing, prototyping, or user research, I bring a thoughtful and strategic mindset to every project I work on.</p>
+                    <div class="personal-info">
+                        <div><span>Name:</span> Asad Siyal</div>
+                        <div><span>Email:</span> asadsiyal18@gmail.com</div>
+                        <div><span>Degree:</span> Bs Computer Science</div>
+                        <div><span>Experience:</span> 1.5 Year</div>
+                        <div><span>Phone:</span> +923101884550</div>
+                        <div><span>Country:</span>Pakistan</div>
+                    </div>
+                    <a href="#" class="btn">Download CV</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills" id="skills">
+        <div class="container">
+            <h2 class="title">My Skills</h2>
+            <div class="skills-content">
+                <div class="column left">
+                    <div class="text">My creative skills & experiences.</div>
+                    <p>I am Asad Siyal, and I am a UI/UX Designer.
+                        I specialize in crafting user-friendly, visually engaging digital experiences. 
+                        With a strong creative background and a keen eye for detail,
+                         I turn ideas into intuitive designs that not only look good but also work seamlessly. 
+                         My experience includes designing websites, mobile apps, and interactive interfaces that enhance usability and meet user needs. I'm passionate about design thinking, wireframing, prototyping, and staying updated with the latest trends in UI/UX to deliver impactful solutions.</p>
+                    
+                </div>
+                <div class="column right">
+                    <div class="bars">
+                        <div class="info">
+                            <span>UI UX Design</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="line uiux"></div>
+                    </div>
+                    <div class="bars">
+                        <div class="info">
+                            <span>HTML</span>
+                            <span>95%</span>
+                        </div>
+                        <div class="line html"></div>
+                    </div>
+                    <div class="bars">
+                        <div class="info">
+                            <span>CSS</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="line css"></div>
+                    </div>
+                    <div class="bars">
+                        <div class="info">
+                            <span>Tailwind CSS</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="line tailwindcss"></div>
+                    </div>
+                    <div class="bars">
+                        <div class="info">
+                            <span>JavaScript</span>
+                            <span>65%</span>
+                        </div>
+                        <div class="line javascript"></div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <!-- <section class="projects" id="projects">
+        <div class="container">
+            <h2 class="title">My Projects</h2>
+            <div class="projects-content">
+                <div class="card">
+                    <div class="box">
+                        <i class="fas fa-code"></i>
+                        <div class="text">Project 1</div>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rem quia sunt, quasi quo illo enim.</p>
+                        <a href="#" class="btn">View Project</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="box">
+                        <i class="fas fa-chart-line"></i>
+                        <div class="text">Project 2</div>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rem quia sunt, quasi quo illo enim.</p>
+                        <a href="#" class="btn">View Project</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="box">
+                        <i class="fas fa-mobile-alt"></i>
+                        <div class="text">Project 3</div>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rem quia sunt, quasi quo illo enim.</p>
+                        <a href="#" class="btn">View Project</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Experience Section -->
+    <section class="experience" id="experience">
+        <div class="container">
+            <h2 class="title">My Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-item-inner">
+                        <i class="fas fa-briefcase icon"></i>
+                        <span class="date">01-11-2023 - 01-11-2024</span>
+                        <h3>junior UI UX Designer</h3>
+                        <h4>Time Consultant, Hyderabad</h4>
+                        <p>Designed and developed user-centered interfaces for web and mobile applications, focusing on usability, visual appeal, and seamless user experience.
+
+Conducted user research, created personas, user flows, wireframes, and prototypes using tools like Figma and Adobe XD.
+
+Collaborated with developers and product managers to implement design solutions that align with business goals.
+
+Improved existing UI/UX designs based on user feedback and analytics, resulting in increased user engagement and satisfaction.
+
+Ensured responsive design practices for optimal performance across various devices and platforms.
+
+Maintained design consistency by developing and following design systems and UI style guides.
+
+</p>
+</div>
+    </div>
+        <div class="timeline-item">
+            <div class="timeline-item-inner">
+                <i class="fas fa-briefcase icon"></i>
+                    <span class="date">6 To 7 Month</span>
+                        <h3>Internship UI UX Designer</h3>
+                        <h4>Shams Builders and Developers, Karachi</h4>
+                        <p>Led end-to-end UI/UX design for the company’s real estate platforms, including website and mobile application interfaces, improving user navigation and overall user experience.
+
+Collaborated with developers and marketing teams to create user-centered designs aligned with business goals.
+
+Conducted user research, wireframing, prototyping, and usability testing to enhance user engagement by 30%.
+
+Designed interactive property listing pages and booking forms, increasing lead conversions by 25%.
+
+Implemented modern design systems and style guides, ensuring consistency across all digital touchpoints.</p>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="title">Contact Me</h2>
+            <div class="contact-content">
+                <div class="column left">
+                    <div class="text">Get in Touch</div>
+                    <p>Hi, I’m Asad Siyal a passionate UI/UX Designer dedicated to crafting seamless and user-centered digital experiences. Whether you’re looking to enhance your product’s usability, design a new interface from scratch, or just want to chat about great design, I’d love to hear from you.</p>
+                    <div class="icons">
+                        <div class="row">
+                            <i class="fas fa-user"></i>
+                            <div class="info">
+                                <div class="head">Name</div>
+                                <div class="sub-title">Asad Siyal</div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div class="info">
+                                <div class="head">Address</div>
+                                <div class="sub-title">Karachi Sindh, Pakistan</div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <i class="fas fa-envelope"></i>
+                            <div class="info">
+                                <div class="head">Email</div>
+                                <div class="sub-title">asadsiyal18@gmail.com</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column right">
+                    <div class="text">Message me</div>
+                    <form action="#">
+                        <div class="fields">
+                            <div class="field name">
+                                <input type="text" placeholder="Name" required>
+                            </div>
+                            <div class="field email">
+                                <input type="email" placeholder="Email" required>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <input type="text" placeholder="Subject" required>
+                        </div>
+                        <div class="field textarea">
+                            <textarea cols="30" rows="10" placeholder="Message.." required></textarea>
+                        </div>
+                        <div class="button">
+                            <button type="submit">Send message</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <span>Design By <a href="#">Asad Siyal</a> | <span class="far fa-copyright"></span> 2024 All rights reserved.</span>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/feed/"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://github.com/"><i class="fab fa-github"></i></a>
+                <a href="https://web.whatsapp.com/"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <div class="scroll-up-btn">
+        <i class="fas fa-angle-up"></i>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
+    <script src="script.js">
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Sticky Navigation
+    const header = document.querySelector('.header');
+    const menuBtn = document.querySelector('.menu-btn');
+    const navbar = document.querySelector('.navbar');
+    
+    window.addEventListener('scroll', function() {
+        header.classList.toggle('sticky', window.scrollY > 0);
+    });
+    
+    // Menu Toggle
+    menuBtn.addEventListener('click', function() {
+        navbar.classList.toggle('active');
+        menuBtn.querySelector('i').classList.toggle('fa-times');
+    });
+    
+    // Close menu when clicking on a link
+    document.querySelectorAll('.navbar ul li a').forEach(item => {
+        item.addEventListener('click', function() {
+            navbar.classList.remove('active');
+            menuBtn.querySelector('i').classList.remove('fa-times');
+        });
+    });
+    
+    // Typing Animation
+    const typed = new Typed('.typing', {
+        strings: ['Web Developer', 'UI/UX Designer', 'Freelancer'],
+        typeSpeed: 100,
+        backSpeed: 60,
+        loop: true
+    });
+    
+    const typed2 = new Typed('.typing-2', {
+        strings: ['Web Developer', 'UI/UX Designer', 'Freelancer'],
+        typeSpeed: 100,
+        backSpeed: 60,
+        loop: true
+    });
+    
+    // Scroll Up Button
+    const scrollUpBtn = document.querySelector('.scroll-up-btn');
+    
+    window.addEventListener('scroll', function() {
+        scrollUpBtn.classList.toggle('active', window.scrollY > 300);
+    });
+    
+    scrollUpBtn.addEventListener('click', function() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+    
+    // Smooth Scrolling for Navigation Links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            
+            if (targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+    
+    // Animation on Scroll
+    const animateOnScroll = function() {
+        const elements = document.querySelectorAll('.home-content, .about-content .left, .about-content .right, .skills-content .left, .skills-content .right, .projects-content .card, .timeline-item, .contact-content .left, .contact-content .right');
+        
+        elements.forEach(element => {
+            const elementPosition = element.getBoundingClientRect().top;
+            const screenPosition = window.innerHeight / 1.3;
+            
+            if (elementPosition < screenPosition) {
+                element.style.opacity = '1';
+                element.style.transform = 'translateY(0)';
+            }
+        });
+    };
+    
+    // Set initial state for animation
+    const elements = document.querySelectorAll('.home-content, .about-content .left, .about-content .right, .skills-content .left, .skills-content .right, .projects-content .card, .timeline-item, .contact-content .left, .contact-content .right');
+    elements.forEach(element => {
+        element.style.opacity = '0';
+        element.style.transform = 'translateY(30px)';
+        element.style.transition = 'all 0.5s ease';
+    });
+    
+    // Trigger animation on load and scroll
+    window.addEventListener('load', animateOnScroll);
+    window.addEventListener('scroll', animateOnScroll);
+    
+    // Form Submission
+    const contactForm = document.querySelector('.contact form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Here you would typically send the form data to a server
+            // For demo purposes, we'll just show an alert
+            alert('Thank you for your message! I will get back to you soon.');
+            this.reset();
+        });
+    }
+});
+    </script>
+</body>
+</html>
